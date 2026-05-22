@@ -1,0 +1,1 @@
+console.log("Gajendra CSC Center Website Loaded");
