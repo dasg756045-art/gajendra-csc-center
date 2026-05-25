@@ -134,47 +134,113 @@ Gajendra CSC Center ହେଉଛି ଓଡ଼ିଶାର ବାଲେଶ୍ୱ�
 
 <!-- AADHAAR -->
 
-<div class="card"
-onclick="openAadhaarService()">
+<a href="aadhaar.html"
+class="card">
 
 <i class="fa-solid fa-id-card"></i>
 
 <h3>Aadhaar Services</h3>
 
-</div>
+</a>
 
 <!-- PAN -->
 
-<div class="card"
-onclick="openPanService()">
+<a href="pan.html"
+class="card">
 
 <i class="fa-solid fa-address-card"></i>
 
 <h3>PAN Card</h3>
 
-</div>
+</a>
+
+<!-- E DISTRICT -->
+
+<a href="edistrict.html"
+class="card">
+
+<i class="fa-solid fa-globe"></i>
+
+<h3>E-District Services</h3>
+
+</a>
 
 <!-- BANKING -->
 
-<div class="card"
-onclick="openBankingService()">
+<a href="banking.html"
+class="card">
 
 <i class="fa-solid fa-building-columns"></i>
 
 <h3>Banking Services</h3>
 
-</div>
+</a>
+
+<!-- FINANCIAL -->
+
+<a href="financial.html"
+class="card">
+
+<i class="fa-solid fa-indian-rupee-sign"></i>
+
+<h3>Financial Services</h3>
+
+</a>
+
+<!-- BILL -->
+
+<a href="bill.html"
+class="card">
+
+<i class="fa-solid fa-money-bill"></i>
+
+<h3>Bill Payment</h3>
+
+</a>
+
+<!-- GOVERNMENT -->
+
+<a href="government.html"
+class="card">
+
+<i class="fa-solid fa-globe"></i>
+
+<h3>Government Services</h3>
+
+</a>
+
+<!-- FORMS -->
+
+<a href="forms.html"
+class="card">
+
+<i class="fa-solid fa-file"></i>
+
+<h3>Online Forms</h3>
+
+</a>
 
 <!-- TICKET -->
 
-<div class="card"
-onclick="openTicketService()">
+<a href="ticket.html"
+class="card">
 
 <i class="fa-solid fa-train"></i>
 
 <h3>Ticket Booking</h3>
 
-</div>
+</a>
+
+<!-- COMMON -->
+
+<a href="common.html"
+class="card">
+
+<i class="fa-solid fa-gear"></i>
+
+<h3>Common Services</h3>
+
+</a>
 
 </div>
 
@@ -194,6 +260,11 @@ onclick="openTicketService()">
 <img src="shop4.jpg" alt="">
 <img src="shop5.jpg" alt="">
 <img src="shop6.jpg" alt="">
+<img src="shop7.jpg" alt="">
+<img src="shop8.jpg" alt="">
+<img src="shop9.jpg" alt="">
+<img src="shop10.jpg" alt="">
+<img src="shop11.jpg" alt="">
 
 </div>
 
@@ -229,6 +300,14 @@ Odisha
 
 <p>
 
+<i class="fa-solid fa-phone"></i>
+
+06788-233299
+
+</p>
+
+<p>
+
 <i class="fa-solid fa-envelope"></i>
 
 cscchampo@gmail.com
@@ -236,6 +315,27 @@ cscchampo@gmail.com
 </p>
 
 </div>
+
+<form>
+
+<input type="text"
+placeholder="Your Name"
+required>
+
+<input type="email"
+placeholder="Your Email"
+required>
+
+<textarea
+placeholder="Your Message"></textarea>
+
+<button type="submit">
+
+Send Message
+
+</button>
+
+</form>
 
 </section>
 
@@ -262,11 +362,9 @@ All Rights Reserved
 
 </footer>
 
-<!-- SCRIPT -->
+<!-- PROFILE SCRIPT -->
 
 <script>
-
-/* PROFILE */
 
 const userName =
 localStorage.getItem("userName");
@@ -334,95 +432,6 @@ ${userMobile}
 </div>
 
 `;
-
-}
-
-/* AADHAAR */
-
-function openAadhaarService(){
-
-const user =
-localStorage.getItem("userName");
-
-if(user){
-
-window.open(
-"https://myaadhaar.uidai.gov.in/en_IN",
-"_blank"
-);
-
-}else{
-
-window.location.href =
-"aadhaar.html";
-
-}
-
-}
-
-/* PAN */
-
-function openPanService(){
-
-const user =
-localStorage.getItem("userName");
-
-if(user){
-
-window.open(
-"https://www.onlineservices.nsdl.com",
-"_blank"
-);
-
-}else{
-
-alert("Please Login First");
-
-}
-
-}
-
-/* BANKING */
-
-function openBankingService(){
-
-const user =
-localStorage.getItem("userName");
-
-if(user){
-
-window.open(
-"https://www.pnbindia.in",
-"_blank"
-);
-
-}else{
-
-alert("Please Login First");
-
-}
-
-}
-
-/* TICKET */
-
-function openTicketService(){
-
-const user =
-localStorage.getItem("userName");
-
-if(user){
-
-window.open(
-"https://www.irctc.co.in",
-"_blank"
-);
-
-}else{
-
-alert("Please Login First");
-
-}
 
 }
 
