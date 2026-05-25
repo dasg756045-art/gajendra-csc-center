@@ -132,8 +132,6 @@ Gajendra CSC Center ହେଉଛି ଓଡ଼ିଶାର ବାଲେଶ୍ୱ�
 
 <div class="service-box">
 
-<!-- AADHAAR -->
-
 <a href="aadhaar.html"
 class="card">
 
@@ -142,8 +140,6 @@ class="card">
 <h3>Aadhaar Services</h3>
 
 </a>
-
-<!-- PAN -->
 
 <a href="pan.html"
 class="card">
@@ -154,8 +150,6 @@ class="card">
 
 </a>
 
-<!-- E DISTRICT -->
-
 <a href="edistrict.html"
 class="card">
 
@@ -164,8 +158,6 @@ class="card">
 <h3>E-District Services</h3>
 
 </a>
-
-<!-- BANKING -->
 
 <a href="banking.html"
 class="card">
@@ -176,8 +168,6 @@ class="card">
 
 </a>
 
-<!-- FINANCIAL -->
-
 <a href="financial.html"
 class="card">
 
@@ -186,8 +176,6 @@ class="card">
 <h3>Financial Services</h3>
 
 </a>
-
-<!-- BILL -->
 
 <a href="bill.html"
 class="card">
@@ -198,8 +186,6 @@ class="card">
 
 </a>
 
-<!-- GOVERNMENT -->
-
 <a href="government.html"
 class="card">
 
@@ -208,8 +194,6 @@ class="card">
 <h3>Government Services</h3>
 
 </a>
-
-<!-- FORMS -->
 
 <a href="forms.html"
 class="card">
@@ -220,8 +204,6 @@ class="card">
 
 </a>
 
-<!-- TICKET -->
-
 <a href="ticket.html"
 class="card">
 
@@ -230,8 +212,6 @@ class="card">
 <h3>Ticket Booking</h3>
 
 </a>
-
-<!-- COMMON -->
 
 <a href="common.html"
 class="card">
@@ -384,7 +364,7 @@ document.getElementById("authArea").innerHTML =
 <div style="
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 background:white;
 padding:8px 15px;
 border-radius:40px;
@@ -429,9 +409,36 @@ ${userMobile}
 
 </div>
 
+<button onclick="logoutUser()"
+style="
+padding:8px 15px;
+border:none;
+background:#e63946;
+color:white;
+border-radius:20px;
+cursor:pointer;
+font-weight:bold;
+">
+
+Logout
+
+</button>
+
 </div>
 
 `;
+
+}
+
+/* LOGOUT */
+
+function logoutUser(){
+
+localStorage.removeItem("userName");
+
+localStorage.removeItem("userMobile");
+
+window.location.reload();
 
 }
 
