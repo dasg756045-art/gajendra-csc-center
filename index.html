@@ -35,6 +35,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
 <a href="#about">About</a>
 
+<a href="#appointment">Appointment</a>
+
 <a href="#services">Services</a>
 
 <a href="#gallery">Gallery</a>
@@ -121,6 +123,104 @@ Gajendra CSC Center ହେଉଛି ଓଡ଼ିଶାର ବାଲେଶ୍ୱ�
 </p>
 
 </div>
+
+</section>
+
+<!-- APPOINTMENT -->
+
+<section class="appointment" id="appointment">
+
+<h2>Book Aadhaar Appointment</h2>
+
+<p>
+
+Book Your Aadhaar Service Appointment Easily
+
+</p>
+
+<form id="appointmentForm">
+
+<input type="text"
+id="custName"
+placeholder="Enter Your Name"
+required>
+
+<input type="number"
+id="custMobile"
+placeholder="Enter Mobile Number"
+required>
+
+<select id="service1" required>
+
+<option value="">
+Select Aadhaar Service
+</option>
+
+<option value="Aadhaar New Apply">
+Aadhaar New Apply
+</option>
+
+<option value="Aadhaar Mobile Update">
+Aadhaar Mobile Update
+</option>
+
+<option value="Aadhaar Address Update">
+Aadhaar Address Update
+</option>
+
+<option value="Aadhaar DOB Correction">
+Aadhaar DOB Correction
+</option>
+
+<option value="PVC Aadhaar Card">
+PVC Aadhaar Card
+</option>
+
+<option value="Aadhaar Download">
+Aadhaar Download
+</option>
+
+</select>
+
+<select id="service2">
+
+<option value="">
+Select Another Service (Optional)
+</option>
+
+<option value="Aadhaar New Apply">
+Aadhaar New Apply
+</option>
+
+<option value="Aadhaar Mobile Update">
+Aadhaar Mobile Update
+</option>
+
+<option value="Aadhaar Address Update">
+Aadhaar Address Update
+</option>
+
+<option value="Aadhaar DOB Correction">
+Aadhaar DOB Correction
+</option>
+
+<option value="PVC Aadhaar Card">
+PVC Aadhaar Card
+</option>
+
+<option value="Aadhaar Download">
+Aadhaar Download
+</option>
+
+</select>
+
+<button type="submit">
+
+Book Appointment
+
+</button>
+
+</form>
 
 </section>
 
@@ -342,9 +442,11 @@ All Rights Reserved
 
 </footer>
 
-<!-- PROFILE SCRIPT -->
+<!-- SCRIPT -->
 
 <script>
+
+/* PROFILE */
 
 const userName =
 localStorage.getItem("userName");
@@ -441,6 +543,69 @@ localStorage.removeItem("userMobile");
 window.location.reload();
 
 }
+
+/* APPOINTMENT */
+
+document.getElementById("appointmentForm")
+
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name =
+document.getElementById("custName").value;
+
+const mobile =
+document.getElementById("custMobile").value;
+
+const service1 =
+document.getElementById("service1").value;
+
+const service2 =
+document.getElementById("service2").value;
+
+let message =
+
+"📌 Aadhaar Appointment Booking%0A%0A"
+
++
+
+"👤 Name: " + name + "%0A"
+
++
+
+"📞 Mobile: " + mobile + "%0A"
+
++
+
+"🪪 Service 1: " + service1 + "%0A";
+
+if(service2 !== ""){
+
+message +=
+"🪪 Service 2: " + service2 + "%0A";
+
+}
+
+const whatsappNumber =
+"918260586299";
+
+const whatsappURL =
+
+"https://wa.me/"
++
+whatsappNumber
++
+"?text="
++
+message;
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+});
 
 </script>
 
