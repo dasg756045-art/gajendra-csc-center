@@ -1,305 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>Login - Gajendra CSC</title>
 
-<title>Login</title>
+<link rel="stylesheet" href="auth.css">
 
-<style>
-
-body{
-  margin:0;
-  padding:0;
-  font-family:Arial;
-  background:#0b3d91;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
-
-.login-box{
-  width:350px;
-  background:white;
-  padding:40px;
-  border-radius:15px;
-  text-align:center;
-  box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
-
-.login-box h2{
-  color:#0b3d91;
-  margin-bottom:25px;
-}
-
-.login-box input{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:16px;
-}
-
-.login-box button{
-  width:100%;
-  padding:14px;
-  border:none;
-  background:#0b3d91;
-  color:white;
-  font-size:18px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-.login-box button:hover{
-  background:#082b68;
-}
-
-#msg{
-  margin-top:15px;
-  color:red;
-  font-weight:bold;
-}
-
-.forgot{
-  margin-top:10px;
-  display:block;
-  color:#0b3d91;
-  cursor:pointer;
-  font-size:15px;
-}
-
-.back{
-  display:inline-block;
-  margin-top:20px;
-  color:#0b3d91;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-</style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 </head>
-
 <body>
 
-<div class="login-box">
+<div class="auth-box">
 
-<h2>User Login</h2>
+<h2>Login</h2>
 
-<input type="number"
-id="mobile"
-placeholder="Enter Mobile Number">
+<input type="text" id="loginMobile" placeholder="Mobile Number">
 
-<input type="password"
-id="password"
-placeholder="Enter Password">
+<input type="password" id="loginPassword" placeholder="Password">
 
 <button onclick="loginUser()">
-
 Login
-
 </button>
 
-<span class="forgot"
-onclick="forgotPassword()">
-
-Forgot Password?
-
-</span>
-
-<p id="msg"></p>
-
-<a href="index.html"
-class="back">
-
-← Back To Home
-
-</a>
+<p>
+Don't have account?
+<a href="register.html">Register</a>
+</p>
 
 </div>
 
-<!-- FIREBASE -->
-
-<script type="module">
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-
-import {
-getDatabase,
-ref,
-get
-}
-from "https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js";
-
-const firebaseConfig = {
-
-apiKey:
-"AIzaSyAIytAd1o79ybqKf_AM5y4XtahjnVERAIA",
-
-authDomain:
-"gajendra-csc-center.firebaseapp.com",
-
-databaseURL:
-"https://gajendra-csc-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-projectId:
-"gajendra-csc-center",
-
-storageBucket:
-"gajendra-csc-center.appspot.com",
-
-messagingSenderId:
-"825489467119",
-
-appId:
-"1:825489467119:web:6a2ff2aaccac298899dd1a"
-
-};
-
-const app =
-initializeApp(firebaseConfig);
-
-const db =
-getDatabase(app);
-
-/* LOGIN FUNCTION */
-
-window.loginUser = async function(){
-
-const mobile =
-document.getElementById("mobile").value.trim();
-
-const password =
-document.getElementById("password").value.trim();
-
-if(mobile==="" || password===""){
-
-document.getElementById("msg").innerHTML =
-"Please Enter Mobile & Password";
-
-return;
-
-}
-
-const snapshot =
-await get(ref(db,"users"));
-
-if(snapshot.exists()){
-
-const users =
-snapshot.val();
-
-let found = false;
-
-for(let key in users){
-
-if(
-
-String(users[key].mobile) === String(mobile)
-
-&&
-
-String(users[key].password) === String(password)
-
-){
-
-found = true;
-
-/* SAVE USER */
-
-localStorage.setItem(
-"userName",
-users[key].name
-);
-
-localStorage.setItem(
-"userMobile",
-users[key].mobile
-);
-
-/* SUCCESS */
-
-alert("Login Successful");
-
-/* REDIRECT */
-
-window.location.href =
-"index.html";
-
-break;
-
-}
-
-}
-
-if(!found){
-
-document.getElementById("msg").innerHTML =
-"Wrong Mobile Number or Password";
-
-}
-
-}else{
-
-document.getElementById("msg").innerHTML =
-"No User Found";
-
-}
-
-}
-
-/* FORGOT PASSWORD */
-
-window.forgotPassword = async function(){
-
-const mobile =
-prompt("Enter Your Mobile Number");
-
-if(!mobile) return;
-
-const snapshot =
-await get(ref(db,"users"));
-
-if(snapshot.exists()){
-
-const users =
-snapshot.val();
-
-for(let key in users){
-
-if(
-String(users[key].mobile)
-===
-String(mobile)
-){
-
-alert(
-"Your Password is : "
-+
-users[key].password
-);
-
-return;
-
-}
-
-}
-
-alert("Mobile Number Not Found");
-
-}
-
-}
-
-</script>
+<script type="module" src="auth.js"></script>
 
 </body>
 </html>

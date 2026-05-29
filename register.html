@@ -4,214 +4,53 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Register</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<style>
+<title>Register - Gajendra CSC</title>
 
-body{
-  margin:0;
-  padding:0;
-  font-family:Arial;
-  background:#0b3d91;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
+<link rel="stylesheet" href="auth.css">
 
-.register-box{
-  width:350px;
-  background:white;
-  padding:40px;
-  border-radius:15px;
-  text-align:center;
-  box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
-
-.register-box h2{
-  color:#0b3d91;
-  margin-bottom:25px;
-}
-
-.register-box input{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:16px;
-}
-
-.register-box button{
-  width:100%;
-  padding:14px;
-  border:none;
-  background:#0b3d91;
-  color:white;
-  font-size:18px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-.register-box button:hover{
-  background:#082b68;
-}
-
-#msg{
-  margin-top:15px;
-  color:green;
-  font-weight:bold;
-}
-
-.back{
-  display:inline-block;
-  margin-top:20px;
-  color:#0b3d91;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-</style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 </head>
 
 <body>
 
-<div class="register-box">
+<div class="auth-box">
 
 <h2>Create Account</h2>
 
 <input type="text"
 id="name"
-placeholder="Enter Your Name">
+placeholder="Full Name">
 
-<input type="number"
+<input type="text"
 id="mobile"
-placeholder="Enter Mobile Number">
+placeholder="Mobile Number">
 
 <input type="password"
 id="password"
-placeholder="Create Password">
+placeholder="Password">
 
 <button onclick="registerUser()">
-
 Register
-
 </button>
 
-<p id="msg"></p>
+<p>
+Already have account?
 
-<a href="index.html"
-class="back">
-
-← Back To Home
-
+<a href="login.html">
+Login
 </a>
+
+</p>
 
 </div>
 
-<script type="module">
-
-import { initializeApp }
-
-from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-
-import {
-
-getDatabase,
-ref,
-push
-
-}
-
-from "https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js";
-
-/* FIREBASE */
-
-const firebaseConfig = {
-
-apiKey:
-"AIzaSyAIytAd1o79ybqKf_AM5y4XtahjnVERAIA",
-
-authDomain:
-"gajendra-csc-center.firebaseapp.com",
-
-databaseURL:
-"https://gajendra-csc-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-projectId:
-"gajendra-csc-center",
-
-storageBucket:
-"gajendra-csc-center.appspot.com",
-
-messagingSenderId:
-"825489467119",
-
-appId:
-"1:825489467119:web:6a2ff2aaccac298899dd1a"
-
-};
-
-const app =
-initializeApp(firebaseConfig);
-
-const db =
-getDatabase(app);
-
-/* REGISTER */
-
-window.registerUser = function(){
-
-const name =
-document.getElementById("name").value;
-
-const mobile =
-document.getElementById("mobile").value;
-
-const password =
-document.getElementById("password").value;
-
-if(name==="" || mobile==="" || password===""){
-
-alert("Please Fill All Fields");
-
-return;
-
-}
-
-push(ref(db,"users"),{
-
-name:name,
-
-mobile:String(mobile),
-
-password:String(password)
-
-})
-
-.then(()=>{
-
-document.getElementById("msg").innerHTML =
-"Registration Successful";
-
-document.getElementById("name").value="";
-document.getElementById("mobile").value="";
-document.getElementById("password").value="";
-
-})
-
-.catch((error)=>{
-
-alert(error);
-
-});
-
-}
-
-</script>
+<script type="module" src="auth.js"></script>
 
 </body>
 </html>

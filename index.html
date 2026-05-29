@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0a2f8f">
 
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Gajendra CSC Center</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 </head>
 
 <body>
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+<div>
+Welcome To Gajendra CSC Center
+</div>
+
+<div>
+<i class="fa-regular fa-clock"></i>
+Mon - Sat : 8:00 AM - 10:00 PM
+</div>
+
+</div>
 
 <!-- HEADER -->
 
@@ -25,41 +40,74 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
 <div class="logo">
 
-<h2>Gajendra CSC Center</h2>
+<img src="logo.png">
+
+<div class="logo-text">
+<h2>GAJENDRA CSC</h2>
+<p>Common Service Center</p>
+</div>
 
 </div>
 
 <nav>
 
-<a href="#home">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#appointment">Appointment</a>
-
+<a href="#">Home</a>
+<a href="#">About</a>
 <a href="#services">Services</a>
-
 <a href="#gallery">Gallery</a>
-
 <a href="#contact">Contact</a>
 
 </nav>
 
-<div class="auth-buttons" id="authArea">
+<div class="header-buttons">
 
-<a href="login.html"
-class="login-btn">
+<a href="#"
+class="appointment-btn"
+onclick="openPopup('appointmentPopup')">
+Appointment
+</a>
 
+<a href="#"
+class="login-btn"
+onclick="openPopup('loginPopup')">
 Login
-
 </a>
 
-<a href="register.html"
-class="register-btn">
-
+<a href="#"
+class="register-btn"
+onclick="openPopup('registerPopup')">
 Register
-
 </a>
+
+<!-- PROFILE -->
+
+<div class="profile-box"
+id="profileBox"
+style="display:none;">
+
+<div class="profile-logo"
+id="profileLogo">
+G
+</div>
+
+<div class="profile-info">
+
+<h4 id="profileName">
+Gajendra
+</h4>
+
+<p id="profileMobile">
+8260586299
+</p>
+
+</div>
+
+<button class="logout-btn"
+id="logoutBtn">
+Logout
+</button>
+
+</div>
 
 </div>
 
@@ -67,260 +115,141 @@ Register
 
 <!-- HERO -->
 
-<section class="hero" id="home">
+<section class="hero">
 
-<div class="overlay"></div>
+<img src="banner1.jpg"
+class="hero-banner">
+
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
 
-<h1>Gajendra CSC Center</h1>
+<span>
+DIGITAL INDIA - POWER TO EMPOWER
+</span>
+
+<h1>
+One Stop Solution For <br>
+All Your <span>Digital Needs</span>
+</h1>
 
 <p>
-
-ଏଠାରେ Online ର ସମସ୍ତ କାମ କରାଯାଏ
-
+Aadhaar, PAN, Banking,
+Bill Payment,
+Government Services &
+Much More...
 </p>
 
-<a href="tel:8260586299"
-class="btn">
+<div class="hero-buttons">
 
-Call Now
+<a href="#services"
+class="service-btn">
+Our Services
+</a>
+
+<a href="https://wa.me/918260586299"
+class="whatsapp-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+WhatsApp Us
 
 </a>
 
 </div>
 
-</section>
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-<div class="about-img">
-
-<img src="shop1.jpg" alt="">
-
 </div>
-
-<div class="about-text">
-
-<h2>About Us</h2>
-
-<p>
-
-Gajendra CSC Center ହେଉଛି ଓଡ଼ିଶାର ବାଲେଶ୍ୱରର ସୋରରେ ଅବସ୍ଥିତ ଏକ ବିଶ୍ୱସ୍ତ ଡିଜିଟାଲ୍ ସେବା କେନ୍ଦ୍ର।
-
-</p>
-
-<p>
-
-ଆମର ସେବା ଗୁଡ଼ିକ ଆଧାର ଅପଡେଟ୍,
-ପ୍ୟାନ୍ କାର୍ଡ,
-ବ୍ୟାଙ୍କିଂ ସେବା,
-ଟିକେଟ୍ ବୁକିଂ,
-ସରକାରୀ ଫର୍ମ ପୂରଣ ଏବଂ ଅନ୍ୟାନ୍ୟ ସମସ୍ତ ପ୍ରକାରର ଅନଲାଇନ୍ ସେବା ପ୍ରଦାନ କରାଯାଏ।
-
-</p>
-
-</div>
-
-</section>
-
-<!-- APPOINTMENT -->
-
-<section class="appointment" id="appointment">
-
-<h2>Book Aadhaar Appointment</h2>
-
-<p>
-
-Book Your Aadhaar Service Appointment Easily
-
-</p>
-
-<form id="appointmentForm">
-
-<input type="text"
-id="custName"
-placeholder="Enter Your Name"
-required>
-
-<input type="number"
-id="custMobile"
-placeholder="Enter Mobile Number"
-required>
-
-<select id="service1" required>
-
-<option value="">
-Select Aadhaar Service
-</option>
-
-<option value="Aadhaar New Apply">
-Aadhaar New Apply
-</option>
-
-<option value="Aadhaar Mobile Update">
-Aadhaar Mobile Update
-</option>
-
-<option value="Aadhaar Address Update">
-Aadhaar Address Update
-</option>
-
-<option value="Aadhaar DOB Correction">
-Aadhaar DOB Correction
-</option>
-
-<option value="PVC Aadhaar Card">
-PVC Aadhaar Card
-</option>
-
-<option value="Aadhaar Download">
-Aadhaar Download
-</option>
-
-</select>
-
-<select id="service2">
-
-<option value="">
-Select Another Service (Optional)
-</option>
-
-<option value="Aadhaar New Apply">
-Aadhaar New Apply
-</option>
-
-<option value="Aadhaar Mobile Update">
-Aadhaar Mobile Update
-</option>
-
-<option value="Aadhaar Address Update">
-Aadhaar Address Update
-</option>
-
-<option value="Aadhaar DOB Correction">
-Aadhaar DOB Correction
-</option>
-
-<option value="PVC Aadhaar Card">
-PVC Aadhaar Card
-</option>
-
-<option value="Aadhaar Download">
-Aadhaar Download
-</option>
-
-</select>
-
-<button type="submit">
-
-Book Appointment
-
-</button>
-
-</form>
 
 </section>
 
 <!-- SERVICES -->
 
-<section class="services" id="services">
+<section class="services"
+id="services">
 
 <h2>Our Services</h2>
 
-<div class="service-box">
+<div class="services-grid">
 
 <a href="aadhaar.html"
-class="card">
+class="service-card">
 
 <i class="fa-solid fa-id-card"></i>
 
-<h3>Aadhaar Services</h3>
+<h3>
+Aadhaar Services
+</h3>
 
 </a>
 
-<a href="pan.html"
-class="card">
+<div class="service-card">
 
 <i class="fa-solid fa-address-card"></i>
 
-<h3>PAN Card</h3>
+<h3>
+PAN Card
+</h3>
 
-</a>
+</div>
 
-<a href="edistrict.html"
-class="card">
-
-<i class="fa-solid fa-globe"></i>
-
-<h3>E-District Services</h3>
-
-</a>
-
-<a href="banking.html"
-class="card">
+<div class="service-card">
 
 <i class="fa-solid fa-building-columns"></i>
 
-<h3>Banking Services</h3>
+<h3>
+Banking Services
+</h3>
 
-</a>
+</div>
 
-<a href="financial.html"
-class="card">
+<div class="service-card">
 
-<i class="fa-solid fa-indian-rupee-sign"></i>
+<i class="fa-solid fa-money-bill-wave"></i>
 
-<h3>Financial Services</h3>
+<h3>
+Bill Payment
+</h3>
 
-</a>
+</div>
 
-<a href="bill.html"
-class="card">
-
-<i class="fa-solid fa-money-bill"></i>
-
-<h3>Bill Payment</h3>
-
-</a>
-
-<a href="government.html"
-class="card">
+<div class="service-card">
 
 <i class="fa-solid fa-globe"></i>
 
-<h3>Government Services</h3>
+<h3>
+Government Services
+</h3>
 
-</a>
+</div>
 
-<a href="forms.html"
-class="card">
+<div class="service-card">
 
-<i class="fa-solid fa-file"></i>
+<i class="fa-solid fa-file-lines"></i>
 
-<h3>Online Forms</h3>
+<h3>
+Online Forms
+</h3>
 
-</a>
+</div>
 
-<a href="ticket.html"
-class="card">
+<div class="service-card">
 
 <i class="fa-solid fa-train"></i>
 
-<h3>Ticket Booking</h3>
+<h3>
+Ticket Booking
+</h3>
 
-</a>
+</div>
 
-<a href="common.html"
-class="card">
+<div class="service-card">
 
-<i class="fa-solid fa-gear"></i>
+<i class="fa-solid fa-indian-rupee-sign"></i>
 
-<h3>Common Services</h3>
+<h3>
+Financial Services
+</h3>
 
-</a>
+</div>
 
 </div>
 
@@ -328,23 +257,20 @@ class="card">
 
 <!-- GALLERY -->
 
-<section class="gallery" id="gallery">
+<section class="gallery"
+id="gallery">
 
 <h2>Gallery</h2>
 
-<div class="gallery-box">
+<div class="gallery-grid">
 
-<img src="shop1.jpg" alt="">
-<img src="shop2.jpg" alt="">
-<img src="shop3.jpg" alt="">
-<img src="shop4.jpg" alt="">
-<img src="shop5.jpg" alt="">
-<img src="shop6.jpg" alt="">
-<img src="shop7.jpg" alt="">
-<img src="shop8.jpg" alt="">
-<img src="shop9.jpg" alt="">
-<img src="shop10.jpg" alt="">
-<img src="shop11.jpg" alt="">
+<img src="gallery1.jpg">
+
+<img src="gallery2.jpg">
+
+<img src="gallery3.jpg">
+
+<img src="gallery4.jpg">
 
 </div>
 
@@ -352,14 +278,12 @@ class="card">
 
 <!-- CONTACT -->
 
-<section class="contact" id="contact">
+<section class="contact"
+id="contact">
 
 <h2>Contact Us</h2>
 
-<div class="contact-box">
-
 <p>
-
 <i class="fa-solid fa-location-dot"></i>
 
 Champo Chakka,
@@ -367,247 +291,174 @@ Bagudi Road,
 Soro,
 Balasore,
 Odisha
-
 </p>
 
 <p>
-
 <i class="fa-solid fa-phone"></i>
 
 8260586299
-
 </p>
 
 <p>
-
-<i class="fa-solid fa-phone"></i>
-
-06788-233299
-
-</p>
-
-<p>
-
 <i class="fa-solid fa-envelope"></i>
 
-cscchampo@gmail.com
-
+gajendracsc@gmail.com
 </p>
 
-</div>
+</section>
 
-<form>
+<!-- LOGIN POPUP -->
 
-<input type="text"
-placeholder="Your Name"
+<div class="popup"
+id="loginPopup">
+
+<div class="popup-box">
+
+<span class="close-popup"
+onclick="closePopup('loginPopup')">
+
+&times;
+
+</span>
+
+<h2>Login</h2>
+
+<form id="loginForm">
+
+<input type="tel"
+id="loginMobile"
+placeholder="Mobile Number"
 required>
 
-<input type="email"
-placeholder="Your Email"
+<input type="password"
+id="loginPassword"
+placeholder="Password"
 required>
-
-<textarea
-placeholder="Your Message"></textarea>
 
 <button type="submit">
-
-Send Message
-
+Login
 </button>
 
 </form>
 
-</section>
-
-<!-- WHATSAPP -->
-
-<a href="https://wa.me/918260586299"
-class="whatsapp"
-target="_blank">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-<!-- FOOTER -->
-
-<footer>
-
-<p>
-
-© 2026 Gajendra CSC Center |
-All Rights Reserved
-
-</p>
-
-</footer>
-
-<!-- SCRIPT -->
-
-<script>
-
-/* PROFILE */
-
-const userName =
-localStorage.getItem("userName");
-
-const userMobile =
-localStorage.getItem("userMobile");
-
-if(userName){
-
-const firstLetter =
-userName.charAt(0).toUpperCase();
-
-document.getElementById("authArea").innerHTML =
-
-`
-
-<div style="
-display:flex;
-align-items:center;
-gap:12px;
-background:white;
-padding:8px 15px;
-border-radius:40px;
-">
-
-<div style="
-width:45px;
-height:45px;
-background:#ffd700;
-color:#000;
-font-weight:bold;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:20px;
-">
-
-${firstLetter}
-
-</div>
-
-<div style="text-align:left;">
-
-<div style="
-font-weight:bold;
-color:#0b3d91;
-">
-
-${userName}
-
-</div>
-
-<div style="
-font-size:13px;
-color:#444;
-">
-
-${userMobile}
-
 </div>
 
 </div>
 
-<button onclick="logoutUser()"
-style="
-padding:8px 15px;
-border:none;
-background:#e63946;
-color:white;
-border-radius:20px;
-cursor:pointer;
-font-weight:bold;
-">
+<!-- REGISTER POPUP -->
 
-Logout
+<div class="popup"
+id="registerPopup">
 
+<div class="popup-box">
+
+<span class="close-popup"
+onclick="closePopup('registerPopup')">
+
+&times;
+
+</span>
+
+<h2>Create Account</h2>
+
+<form id="registerForm">
+
+<input type="text"
+id="registerName"
+placeholder="Full Name"
+required>
+
+<input type="tel"
+id="registerMobile"
+placeholder="Mobile Number"
+required>
+
+<input type="password"
+id="registerPassword"
+placeholder="Password"
+required>
+
+<button type="submit">
+Register
 </button>
 
+</form>
+
 </div>
 
-`;
+</div>
 
-}
+<!-- APPOINTMENT POPUP -->
 
-/* LOGOUT */
+<div class="popup"
+id="appointmentPopup">
 
-function logoutUser(){
+<div class="popup-box">
 
-localStorage.removeItem("userName");
+<span class="close-popup"
+onclick="closePopup('appointmentPopup')">
 
-localStorage.removeItem("userMobile");
+&times;
 
-window.location.reload();
+</span>
 
-}
+<h2>Book Appointment</h2>
 
-/* APPOINTMENT */
+<form id="appointmentForm">
 
-document.getElementById("appointmentForm")
+<input type="text"
+id="appointName"
+placeholder="Your Name"
+required>
 
-.addEventListener("submit",function(e){
+<input type="tel"
+id="appointMobile"
+placeholder="Mobile Number"
+required>
 
-e.preventDefault();
+<select id="appointService"
+required>
 
-const name =
-document.getElementById("custName").value;
+<option value="">
+Select Service
+</option>
 
-const mobile =
-document.getElementById("custMobile").value;
+<option>
+Aadhaar Service
+</option>
 
-const service1 =
-document.getElementById("service1").value;
+<option>
+PAN Card
+</option>
 
-const service2 =
-document.getElementById("service2").value;
+<option>
+Banking Service
+</option>
 
-let message =
+<option>
+Bill Payment
+</option>
 
-"📌 Aadhaar Appointment Booking%0A%0A"
+<option>
+Online Form
+</option>
 
-+
+</select>
 
-"👤 Name: " + name + "%0A"
+<button type="submit">
+Submit Appointment
+</button>
 
-+
+</form>
 
-"📞 Mobile: " + mobile + "%0A"
+</div>
 
-+
+</div>
 
-"🪪 Service 1: " + service1 + "%0A";
+<script type="module"
+src="auth.js"></script>
 
-if(service2 !== ""){
-
-message +=
-"🪪 Service 2: " + service2 + "%0A";
-
-}
-
-const whatsappNumber =
-"918260586299";
-
-const whatsappURL =
-
-"https://wa.me/"
-+
-whatsappNumber
-+
-"?text="
-+
-message;
-
-window.open(
-whatsappURL,
-"_blank"
-);
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
